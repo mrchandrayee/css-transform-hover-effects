@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>CSS Transform Hover Effect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>CSS Transform Hover Effect</h1>
+
+    <section class="effects-board" aria-label="CSS transform hover examples">
+      <article class="effect-card">
+        <div class="preview"><button class="demo scale" type="button">Scale Up</button></div>
+        <div class="code-panel">
+          <h2>Scale Up</h2>
+          <pre><code>.scale:hover {
+  transform: scale(1.2);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo rotate" type="button">Rotate</button></div>
+        <div class="code-panel">
+          <h2>Rotate</h2>
+          <pre><code>.rotate:hover {
+  transform: rotate(25deg);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo move-up" type="button">Move Up</button></div>
+        <div class="code-panel">
+          <h2>Move Up</h2>
+          <pre><code>.moveUp:hover {
+  transform:
+  translateY(-25px);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo skew-x" type="button">Skew X</button></div>
+        <div class="code-panel">
+          <h2>Skew X</h2>
+          <pre><code>.skewX:hover {
+  transform: skewX(15deg);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo rotate-360" type="button">Rotate 360°</button></div>
+        <div class="code-panel">
+          <h2>5. Rotate 360°</h2>
+          <pre><code>.rotate360:hover {
+  transform: rotate(360deg);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo move-right" type="button">Move Right</button></div>
+        <div class="code-panel">
+          <h2>Move Right</h2>
+          <pre><code>.moveRight:hover {
+  transform: translateX(25px);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo scale-down" type="button">Scale Down</button></div>
+        <div class="code-panel">
+          <h2>Scale Down</h2>
+          <pre><code>.scaleDown:hover {
+  transform: scale(.8);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo skew-y" type="button">Skew Y</button></div>
+        <div class="code-panel">
+          <h2>Skew Y</h2>
+          <pre><code>.skewY:hover {
+  transform: skewY(15deg);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo flip-x" type="button">Flip X</button></div>
+        <div class="code-panel">
+          <h2>Flip X</h2>
+          <pre><code>.flipX:hover {
+  transform: rotateX(180deg);
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <div class="preview"><button class="demo pop-3d" type="button">3D Pop</button></div>
+        <div class="code-panel">
+          <h2>3D Pop Effect</h2>
+          <pre><code>.pop3d:hover {
+  transform:
+    perspective(600px)
+    rotateX(20deg)
+    rotateY(-20deg)
+    scale(1.1);
+}</code></pre>
+        </div>
+      </article>
+    </section>
+    <p class="footer-note">Hover or tap each orange tile to preview the CSS transform.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

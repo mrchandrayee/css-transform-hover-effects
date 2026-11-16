@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #ff7a18;
+  --orange-light: #ff9412;
+  --card: #15191f;
+  --code: #0d1117;
+  --line: #252b35;
+  --mint: #66d9b7;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 28px 12px 34px;
+  background: #000;
+  color: #f3f5f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  width: min(100%, 700px);
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 22px;
+  color: #a9d4ff;
+  font-size: clamp(28px, 5.4vw, 43px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -.7px;
+  text-align: center;
+  text-shadow: 0 0 2px #4d9fff, 0 0 10px rgba(66, 147, 255, .7);
+}
+
+.effects-board {
+  height: min(82vh, 1080px);
+  min-height: 580px;
+  overflow-y: auto;
+  padding: 18px;
+  border: 3px solid #e77c32;
+  background: #0d0f14;
+  scrollbar-width: thin;
+  scrollbar-color: #555d68 #171a20;
+}
+
+.effect-card {
+  min-height: 190px;
+  margin: 0 0 18px;
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  overflow: hidden;
+  border: 1px solid #252a34;
+  border-radius: 23px;
+  background: var(--card);
+}
+
+.preview {
+  min-width: 0;
+  min-height: 190px;
+  display: grid;
+  place-items: center;
+  background: #15191f;
+}
+
+.demo {
+  width: 155px;
+  height: 155px;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  border: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ff9410 0%, #ff651c 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+  transform-origin: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.demo:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 5px;
+}
+
+.scale:hover, .scale:focus-visible, .scale.is-active { transform: scale(1.2); }
+.rotate:hover, .rotate:focus-visible, .rotate.is-active { transform: rotate(25deg); }
+.move-up:hover, .move-up:focus-visible, .move-up.is-active { transform: translateY(-25px); }
+.skew-x:hover, .skew-x:focus-visible, .skew-x.is-active { transform: skewX(15deg); }
+.rotate-360:hover, .rotate-360:focus-visible, .rotate-360.is-active { transform: rotate(360deg); }
+.move-right:hover, .move-right:focus-visible, .move-right.is-active { transform: translateX(25px); }
+.scale-down:hover, .scale-down:focus-visible, .scale-down.is-active { transform: scale(.8); }
+.skew-y:hover, .skew-y:focus-visible, .skew-y.is-active { transform: skewY(15deg); }
+
+.flip-x {
+  transform-style: preserve-3d;
+}
+.flip-x:hover, .flip-x:focus-visible, .flip-x.is-active {
+  transform: rotateX(180deg);
+}
+
+.pop-3d {
+  transform-style: preserve-3d;
+}
+.pop-3d:hover, .pop-3d:focus-visible, .pop-3d.is-active {
+  transform: perspective(600px) rotateX(20deg) rotateY(-20deg) scale(1.1);
+}
+
+.code-panel {
+  min-width: 0;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid #252a34;
+  border-radius: 23px;
+  background: var(--code);
+}
+
+.code-panel h2 {
+  margin: 0 0 20px;
+  color: #ff9a2e;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.code-panel pre {
+  margin: 0;
+  overflow-x: auto;
+  color: var(--mint);
+  font: 14px/1.6 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  tab-size: 2;
+}
+
+.code-panel code { white-space: pre; }
+
+.footer-note {
+  margin: 12px 0 0;
+  color: #777f8c;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  body { padding: 22px 8px 28px; }
+  .effects-board { padding: 10px; }
+  .effect-card {
+    grid-template-columns: 1fr;
+    border-radius: 18px;
+  }
+  .preview { min-height: 175px; }
+  .demo { width: 130px; height: 130px; }
+  .code-panel {
+    min-height: 150px;
+    padding: 18px;
+    border-left: 0;
+    border-top: 1px solid #252a34;
+    border-radius: 0;
+  }
+  .code-panel h2 { margin-bottom: 12px; font-size: 18px; }
+  .code-panel pre { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+  }
+}
